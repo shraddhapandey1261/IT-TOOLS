@@ -14,7 +14,7 @@ class Bank:
     # It will withdraw certain amonunt from the bank account
     def withdraw(self,withdraw_amount):
         Bank.user_balance -= withdraw_amount
-        print(f"Curernt balance is :{ Bank.user_balance}")
+        print(f"Current balance is :{ Bank.user_balance}")
  
     # Display user details     
     def user(self):
