@@ -1,13 +1,16 @@
-#class composition allows explicit relations between objects.
-#In this example,people live in cities that belong to counties.
-#composition allows people to acces the number of all people living in their country:
+# Class composition allows explicit relations between objects.
+# In this example,people live in cities that belong to counties.
+# Composition allows people to acces the number of all people living in their country:
 class Country(object):
+     
+     # Initializing the function
      def __init__(self):
           self.cities=[]
 
      def addCity(self,city):
           self.cities.append(city)
 
+# Class created 
 class City(object):
      def __init__(self,numPeople):
           self.people=[]
@@ -22,7 +25,8 @@ class City(object):
 
           for i in range(self.numPeople):
                Person(i).join_city(self)
-               
+
+# Class created                
 class Person(object):
      def __init__(self,ID):
           self.ID=ID
@@ -35,7 +39,7 @@ class Person(object):
           x=sum([len(c.people)for c in self.city.country.cities])
           return x
 
-US=Country()
+US=Country()  # Creating instance
 NYC=City(10).join_country(US)
 SF=City(5).join_country(US)
 
