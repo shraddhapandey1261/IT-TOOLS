@@ -1,29 +1,27 @@
-
+# Class salary for initializing the salary
 class Salary:
-     #class salary for initializing the salary
      
+     # Initializing the function
      def __init__(self,pay):
           self.pay = pay
 
+     # Function for calculating the total pay
      def get_total(self):
-          #function for calculating the total pay
-          
           return self.pay * 12
 
+# Class for employee salary details
 class Employee(object):
-     #class for employee salary details
      
+     # Initialising the pay and bonus
      def __init__(self,pay,bonus):
-          #initialising the pay and bonus
-          
           self.pay = pay
           self.bonus = bonus
 
+     # Displaying the annual salary
      def annual_salary(self):
-          #displaying the annual salary
-          
           return f"Total {self.pay.get_total() + self.bonus}"
 
-object_salary = Salary(600)                                 #object for taking the base pay
-obj_employee = Employee(object_salary,500)   #passing the object in the employee class to calculate the total salary
-print(obj_employee.annual_salary())                   #displaying the total annual salary
+
+object_salary = Salary(600)  # Object for taking the base pay
+obj_employee = Employee(object_salary,500)  # Passing the object in the employee class to calculate the total salary
+print(obj_employee.annual_salary())  # Displaying the total annual salary
