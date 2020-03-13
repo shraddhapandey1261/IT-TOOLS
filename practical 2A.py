@@ -1,32 +1,29 @@
+# Creating a class bank
 class Bank:
-    #creating a class bank.
-
-    #accepting user details.
+    
+    # Accepting user details
     user_name = str(input("Enter name:"))
     user_account_number = str(input("Enter account number:"))
     user_balance = 0
-    
+   
+    # It will deposit certain amount in the bank account
     def deposit(self,deposit_amount):
-        #will deposit certain amount in the bank account.
-        
         Bank.user_balance += deposit_amount
-        print(f"Curernt balance is :{ Bank.user_balance}")
+        print(f"Current balance is :{ Bank.user_balance}")
         
+    # It will withdraw certain amonunt from the bank account
     def withdraw(self,withdraw_amount):
-        #will withdraw certain amonunt from the bank account.
-        
         Bank.user_balance -= withdraw_amount
         print(f"Curernt balance is :{ Bank.user_balance}")
-        
+ 
+    # Display user details     
     def user(self):
-        #display user details.
-        
         print(f"The name is { Bank.user_name}")
         print(f'The account number is { Bank.user_account_number}')
         print(f"Curernt balance is :{ Bank.user_balance}")
         
 
-bank_object = Bank()        #creating an object for bank.
+bank_object = Bank()  # Creating an object for bank
 
 while True:
     
