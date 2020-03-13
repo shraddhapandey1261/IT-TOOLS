@@ -1,18 +1,16 @@
-#Python program
-#to overload an binary + operator
+#!/usr/bin/python3
 
-class A:
-     def __init__(self,a):
-          self.a=a
+import smtplib
+import getpass
 
-     #adding two objwcts
-     def __add__(self,o):
-          return self.a+o.a
+content='hello,sending mail from python code'
+mail=smtplib.SMTP('smtp.gmail.com',587)
+mail.ehlo()
+mail.starttls()
 
-object1=A(1)
-object2=A(2)
-object3=A("FY")
-object4=A("IT")
+passwd = getpass.getpass()
 
-print(object1 + object2)
-print(object3 + object4)
+mail.login('sender@gmail.com',passwd)
+mail.sendmail('sender@gmail.com','receiver@gmail.com',content)
+
+mail.close()

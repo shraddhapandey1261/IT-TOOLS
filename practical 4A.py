@@ -1,25 +1,31 @@
-#python function to fing the area of rectangle using constructor and destructor
+import re
 
-class Rectangle:
+txt = "The rain in Spain"
+# Search the string to see if it starts with "The" and ends with "Spain"
+x = re.search("^The.*Spain$", txt)
+print("Search:"+str(x))
 
-      #initializing the rectangle instance
+# Print a list of all matches
+x = re.findall("ai", txt)
+print("Find All:"+str(x))
 
-      def __init__ (self,l,b):
-           print("Initializing an rectangle instance")
-           self.l=l
-           self.b=b
+# Return an empty list if no match was found
+x = re.findall("Portugal", txt)
+print("Find All:"+str(x))
 
-      #calculating the area of rectangle
-           
-      def area_r(self):
-            area=self.l*self.b
-            print("Area of rectangle is ",area)
+# Search for the first white-space character in the string
+x = re.search("\s", txt)
+print("The first white-space character is located in position:", x.start())
+print("Split:"+str(x))
 
-      #destroying the instance of rectangle
+# Split the string only at the first occurrence
+x = re.split("\s", txt, 1)
+print(x)
 
-      def __del__(self):
-         print("Instance is destroyed")
+# Replace every white-space character with the number 9
+x = re.sub("\s", "9", txt)
+print(x)
 
-c=Rectangle(15,15)
-c.area_r()
-c.__del__()
+# Replace the first 2 occurrences
+x = re.sub("\s", "9", txt, 2)
+print(x)

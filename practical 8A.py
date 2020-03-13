@@ -1,51 +1,10 @@
-x,y=2,4
+import urllib.request
+# open a connection to a URL using urllib
+webUrl  = urllib.request.urlopen('https://wordpress.org/plugins/about/readme.txt')
 
-print("x=",x,",y=",y)
+#get the result code and print it
+print ("result code: " + str(webUrl.getcode()))
 
-print("\nx+y=",x+y)
-print("x.__add__(y)=",x.__add__(y)) #same as x+ y
-
-print("\nx*y=",x*y)
-print("x.__mul__(y)=",x.__mul__(y)) #same as x* y
-
-print("\nx/y=",x/y)
-print("x.__truediv__(y)=",x.__truediv__(y)) #same as x/ y
-
-print("\nx**y=",x**y)
-print("x.__pow__(y)=",x.__pow__(y)) #same as x** y
-
-print("\nx%y=",x%y)
-print("x.__mod__(y)=",x.__mod__(y)) #same as x%y
-
-print("\nx==y=",x==y)
-print("x.__eq__(y)=",x.__eq__(y)) #same as x== y
-
-print("\nx!=y=",x!=y)
-print("x.__ne__(y)=",x.__ne__(y)) #same as x!=y
-
-print("\nx>=y=",x>=y)
-print("x.__ge__(y)=",x.__ge__(y)) #same as x>= y
-
-print("\nx<=y=",x<=y)
-print("x.__le__(y)=",x.__le__(y)) #same as x<=y
-print("----------------------------------------------------")
-
-
-str1="special methods"
-
-print("\nstr1=",str1)
-
-print("\n'ods' in str1=","ods" in str1)
-print("str1.__contains__('ods')=",str1.__contains__("ods"))  #same as"ods" in str1
-
-print("\nlen(str1)=",len(str1))
-print("str1.__len__()=",str1.__len__())  #same as len(str1)
-print("----------------------------------------------------")
-
-list1=[11,33,55]
-
-print("\nlist1=",list1)
-
-print("\nlist1[1]=",list1[1])
-print("list1.getitem(1)=",list1.__getitem__(1)) #same as list[1]
-print("str(list1)=",str(list1)) # same as list1.__str__()
+# read the data from the URL and print it
+data = webUrl.read()
+print (data)

@@ -1,27 +1,11 @@
-class property_function_demo:
-     #class property function created
-     
-     def __init__(self):
-          
-          self._age = 0
-
-     def get_age(self):
-          #fucntion for printing the age
-          
-          print("Getter method called")
-          return self._age
-
-     def set_age(self,age):
-          #function for setting the age
-          
-          print("setter method called")
-
-     def delete_age(self):
-          #function for deleting the age
-          del self.age
-
-     age = property(get_age,set_age)
-
-object1 = property_function_demo()
-object1.age = 10
-print(object1.age)
+from tkinter import*
+root=Tk()
+canvas_width=500
+canvas_height=500
+c=Canvas(root,width=canvas_width,height=canvas_height,bg="blue")
+c.pack()
+y=int(canvas_height/2)
+c.create_line(10,y,canvas_width,y,fill="green")
+coord=10,50,240,210
+arc=c.create_arc(coord,start=90,extent=190,fill="red")
+oval=c.create_oval(50,60,100,100)

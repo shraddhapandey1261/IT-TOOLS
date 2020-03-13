@@ -1,21 +1,20 @@
-class Employee:
-     #class employee created
+import bs4 as bs
+import urllib
+import requests
+import pandas as pd
 
-     def add(self,salary,incentive):
-          #function to calculate salary and incentive.
+sauce=requests.get('https://www.moneycontrol.comstocksmarketindia/')
+soup=bs.BeautifulSoup(sauce.content,'html.parser')
+date=soup.find_all('span',class_='robo_medium')
 
-          print(f"Total salary of the base class is {salary + incentive}.")
-
-class Department(Employee):
-     #class department created
-
-     temp = "I am a member of the department class."
-     def add(self,salary,incentive):
-          #function to calculate salary and incentive.
-
-          print(f"Total salary of the derived class is {salary + incentive}.")
-          super(Department,self).add(salary,incentive)
-
-#class objects created.
-dept = Department()
-dept.add(45000,5000)
+dates=[]
+for i in date:
+    dates.append(i.text)
+    
+net_fill_values=soup.find_all('td',class_='tbl_greentext')
+net_fill=[]
+for i in net_fill_values:
+    net_fill.append(i.text)
+net_fill=net_fill[:len(dates)]
+data_frame=pd.DataFrame({'Dates'.dates,'Net Fill'.net_fill})
+print(data_frame)

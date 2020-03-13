@@ -1,47 +1,41 @@
-class Bank:
-    #creating a class bank.
+# Python program to show iterables,itertors and itertry
+# Python program to show iterator
 
-    #accepting user details.
-    user_name = str(input("Enter name:"))
-    user_account_number = str(input("Enter account number:"))
-    user_balance = 0
-    
-    def deposit(self,deposit_amount):
-        #will deposit certain amount in the bank account.
-        
-        Bank.user_balance += deposit_amount
-        print(f"Curernt balance is :{ Bank.user_balance}")
-        
-    def withdraw(self,withdraw_amount):
-        #will withdraw certain amonunt from the bank account.
-        
-        Bank.user_balance -= withdraw_amount
-        print(f"Curernt balance is :{ Bank.user_balance}")
-        
-    def user(self):
-        #display user details.
-        
-        print(f"The name is { Bank.user_name}")
-        print(f'The account number is { Bank.user_account_number}')
-        print(f"Curernt balance is :{ Bank.user_balance}")
-        
+print("----------ITERATORS------------")
+lst1=["Mumbai","Pune","Delhi","Patna"]
 
-bank_object = Bank()        #creating an object for bank.
+iterator_obj=iter(lst1)
+print(next(iterator_obj))
+print(next(iterator_obj))
+print(next(iterator_obj))
+print(next(iterator_obj))
 
-while True:
-    
-    print("1.User details.")
-    print("2.Deposit amount.")
-    print("3.Withdraw amount")
-    print("4.Quit.")
-    #creating an option system to navigate through the options.
-    
-    option = int(input("Enter option:"))
-    if option == 2:
-        bank_object.deposit(int(input("Enter deposit amount:")))
-    elif option ==3:
-        bank_object.withdraw(int(input("Enter withdraw amount:")))
-    elif option == 1:
-        bank_object.user()
-    elif option == 4:
-        break  
+# Python program to show iterator
+lst1=["Mumbai","Pune","Delhi","Patna"]
+for city in lst1:
+                print(city)
+print("\n")
+
+lst2=["Python", "Pearl", "C", "C++", "Java"]
+for lang in lst2:
+                print(lang)
+print("\n")
+
+for s in "Iteration is easy":
+                print(s,end = " ")
+
+# Python program to show iteratry
+def iterable(obj):
+                try:
+                                iter(obj)
+                                return True
+                except TypeError:
+                                return False
+for element in[34, [4,5], (4,5), {"a":4}, "abcd", 4.5]:
+                print(element , "is iterable:", iterable(element))
+
+
+
+
+
+
