@@ -1,3 +1,4 @@
+# Creating class 
 class Time:
         h=0
         m=0
@@ -27,7 +28,7 @@ class final_time:
               print(self.h,"hours and",self.m,"minutes")
 
          
-t1_obj=Time()
+t1_obj=Time()  # Creating instance
 t1_obj.accept()
 t2_obj=Time()
 t2_obj.accept()
