@@ -1,3 +1,4 @@
+# Importing math module
 import math
 
 class Rectangle:
@@ -16,19 +17,19 @@ class Ellipse:
     def calculation(self,x_axis,y_axis):
         print(f"The area of the Ellipse is {math.pi * x_axis * y_axis}")
 
-a1 = Rectangle()
+a1 = Rectangle()  
 a2 = Square()
 a3 = Circle()
 a4 = Ellipse()
 
-while True:
+while True:  # Implementing while loop
     print("1.Area of the rectangle.")
     print("2.Area of the Square.")
     print("3.Area of the Circle.")
     print("4.Area of the Ellipse.")
     print("5.Quit")
     opt = int(input("Enter option:"))
-    if opt == 1:
+    if opt == 1:  # Implementing if-else loop
         a1.calculation(int(input("Enter length")),int(input("Enter breadth")))
     elif opt == 2:
         a2.calculation(int(input("Enter side")))
