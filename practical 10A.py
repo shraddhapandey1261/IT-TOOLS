@@ -1,3 +1,4 @@
+# To calculate the annual salary of employee
 # Class salary for initializing the salary
 class Salary:
      
